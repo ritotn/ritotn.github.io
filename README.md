@@ -1,4 +1,4 @@
-# ritot.github.io
+# [ritot.github.io](https://ritot.github.io)
 Personal website
 
-Static personal website designed by myself.
+A static personal website designed by myself using HTML.
