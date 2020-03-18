@@ -266,7 +266,7 @@
       
       <div class="row">
         <div class="one-half column">
-          <table class="u-max-full-width" id="members">
+          <table class="u-max-full-width" id="ex-table">
             <thead>
               <tr>
                 <th>Name</th>
@@ -324,22 +324,17 @@
           
           snapshot.forEach(function(data){
             var Name = data.val();
-            var Discord = Name.Discord;
-            var Groupme = Name.Groupme;
-            var Love = Name.Love;
-            var Minecraft = Name.Minecraft;
-            var Timezone = Name.Timezone;
             content += '<tr>';
             content += '<td>' + Name + '</td>';
-            content += '<td>' + Timezone + '</td>'
-            content += '<td>' + Groupme + '</td>';
-            content += '<td>' + Discord + '</td>';
-            content += '<td>' + Minecraft + '</td>';
-            content += '<td>' + Love + '</td>';
-            content += "</tr>";
+            content += '<td>' + Name.Timezone + '</td>';
+            content += '<td>' + Name.Groupme + '</td>';
+            content += '<td>' + Name.Discord + '</td>';
+            content += '<td>' + Name.Minecraft + '</td>';
+            content += '<td>' + Name.Love + '</td>';
+            content += '</tr>';
           });
           
-          $('#members').append(content);
+          $('#ex-table').append(content);
         }
       });
     </script>
