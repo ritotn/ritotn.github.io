@@ -263,6 +263,33 @@
           </table>
         </div>
       </div>
+      
+      <div class="row">
+        <div class="one-half column">
+          <table class="u-max-full-width" id="members">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Time</th>
+                <th>Discord?</th>
+                <th>Groupme?</th>
+                <th>Minecraft?</th>
+                <th>Loved by all?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="name"></td>
+                <td id="time"></td>
+                <td id="groupme"></td>
+                <td id="discord"></td>
+                <td id="minecraft"></td>
+                <td id="love"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
     </div>
 
@@ -291,6 +318,29 @@
       
       // Get a reference to the database service
       var database = firebase.database();
+      database.once('value', function(snapshot){
+        if(snapshot.exists()){
+          var content = '';
+          
+          snapshot.forEach(function(data){
+            var Name = data.val();
+            var Discord = Name.Discord;
+            var Groupme = Name.Groupme;
+            var Love = Name.Love;
+            var Minecraft = Name.Minecraft;
+            var Timezone = Name.Timezone;
+            content += '<tr>';
+            content += '<td>' + Name + '</td>';
+            content += '<td>' + Timezone + '</td>'
+            content += '<td>' + Groupme + '</td>';
+            content += '<td>' + Discord + '</td>';
+            content += '<td>' + Minecraft + '</td>';
+            content += '<td>' + Love + '</td>';
+          });
+          
+          $('#members').append(content);
+        }
+      });
     </script>
 
   </body>
