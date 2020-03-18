@@ -266,7 +266,7 @@
       
       <div class="row">
         <div class="one-half column">
-          <table class="u-max-full-width" id="ex-table">
+          <table class="u-max-full-width" id="members">
             <thead>
               <tr>
                 <th>Name</th>
@@ -318,7 +318,7 @@
       
       // Get a reference to the database service
       var database = firebase.database();
-      database.ref().once('value', function(snapshot){
+      database.ref().on('value', function(snapshot){
         if(snapshot.exists()){
           var content = '';
           
@@ -334,7 +334,7 @@
             content += '</tr>';
           });
           
-          $('#ex-table').append(content);
+          $('#members').append(content);
         }
       });
     </script>
