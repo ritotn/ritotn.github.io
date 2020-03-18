@@ -318,7 +318,7 @@
       
       // Get a reference to the database service
       var database = firebase.database();
-      database.once('value', function(snapshot){
+      database.ref().once('value', function(snapshot){
         if(snapshot.exists()){
           var content = '';
           
