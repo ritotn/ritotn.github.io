@@ -49,7 +49,7 @@
                 <td>🚫</td>
                 <td>🚫</td>
                 <td>💕</td>
-                <td>🏄‍♀️</td>
+                <td>🏄‍♀️<p id="demo"></p></td>
               </tr>
               <tr>
                 <td>Abu</td>
@@ -337,6 +337,17 @@
           $('#members').append(content);
         }
       });
+    </script>
+    
+    <script src="moment.js"></script>
+    <script src="moment-timezone-with-data.js"></script>
+    <script>
+      try {
+        const now = moment();
+      }
+      catch (err) {
+        document.getElementById("demo").innerHTML = err;
+      }
     </script>
 
   </body>
