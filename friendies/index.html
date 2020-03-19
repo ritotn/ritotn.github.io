@@ -343,7 +343,7 @@
     <script src="https://momentjs.com/downloads/moment-timezone-with-data-1970-2030.js"></script>
     <script>
       const now = moment().format("HH:mm");
-      var surfer = now.tz("America/Los_Angeles");
+      const surfer = moment().tz("America/Los_Angeles").format("HH:mm");
       document.getElementById("demo").innerHTML = surfer;
     </script>
 
