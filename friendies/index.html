@@ -339,14 +339,11 @@
       });
     </script>
     
-    <script src="https://unpkg.com/moment">
-      try {
-        const now = moment();
-        now.format(moment.HTML5_FMT.TIME);
-      }
-      catch (err) {
-        document.getElementById("demo").innerHTML = err;
-      }
+    <script src="https://unpkg.com/moment" />
+    <script>
+      const now = moment();
+      now.format(moment.HTML5_FMT.TIME);
+      document.getElementById("demo").innerHTML = now;
     </script>
 
   </body>
