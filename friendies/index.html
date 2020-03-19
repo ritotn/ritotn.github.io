@@ -343,12 +343,12 @@
     <script src="https://momentjs.com/downloads/moment-timezone-with-data-1970-2030.js"></script>
     <script>
       const now = moment();
-      const surfer = now.tz("America/Los_Angeles").format("HH:mm");
-      const cow = now.tz("America/New York").format("HH:mm");
-      const whale = now.tz("Asia/Manila").format("HH:mm");
-      const turkey = now.tz("Europe/Istanbul").format("HH:mm");
-      const flower = now.tz("Pacific/Honolulu").format("HH:mm");
-      const cowboy = now.tz("America/Chicago").format("HH:mm");
+      let surfer = now.tz("America/Los_Angeles").format("HH:mm");
+      let cow = now.tz("America/New York").format("HH:mm");
+      let whale = now.tz("Asia/Manila").format("HH:mm");
+      let turkey = now.tz("Europe/Istanbul").format("HH:mm");
+      let flower = now.tz("Pacific/Honolulu").format("HH:mm");
+      let cowboy = now.tz("America/Chicago").format("HH:mm");
       document.getElementById("surfer").innerHTML = surfer;
       document.getElementById("cow").innerHTML = cow;
       document.getElementById("whale").innerHTML = whale;
