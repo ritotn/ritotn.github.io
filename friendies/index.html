@@ -340,9 +340,11 @@
     </script>
     
     <script src="https://unpkg.com/moment"></script>
+    <script src="https://momentjs.com/downloads/moment-timezone-with-data-1970-2030.js"></script>
     <script>
       const now = moment().format("HH:mm");
-      document.getElementById("demo").innerHTML = now;
+      var surfer = now.tz("America/Los_Angeles");
+      document.getElementById("demo").innerHTML = surfer;
     </script>
 
   </body>
