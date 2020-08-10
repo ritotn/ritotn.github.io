@@ -17,10 +17,20 @@
       </div>
       
       <div class="row">
-        <img alt="map" src="friendies_map.png" style="width:100%;height:"auto"></img>
+        <img alt="map" src="friendies_map.png" style="width:100%;height:"auto" usemap="#friendiesinfo"></img>
+        <map name="friendiesinfo">
+          <area shape="rect" coords="0,0,50,50" href="#" onclick="clickmap('test 1')" alt="test">
+        </map>
       </div>
 
     </div>
+    
+    <script>
+      function clickmap(info) {
+        alert(info)
+      }
+    </script>
+                                                                              
   </body>
 
 </html>
