@@ -79,6 +79,9 @@
        var hannah = L.marker([34.2272, -118.2435]).addTo(mymap);
        hannah.bindPopup("<b>Hannah's House</b><br>1st Floor: Hannah");
 
+       var minh = L.marker([33.2213, -96.6609]).addTo(mymap);
+       minh.bindPopup("<b>Minh's House</b><br>1st Floor: Minh");
+
        const west_button = L.easyButton('<span class="btn">&#87;</span>', function(){
          west.openPopup();
          mymap.setView([42.71263, -73.20377], 16);
@@ -90,6 +93,12 @@
          mymap.setView([34.2272, -118.2435], 16);
        }).addTo(mymap);
        hannah_button.button.style.padding = '0px';
+
+       const minh_button = L.easyButton('<span class="btn">&#77;</span>', function(){
+         minh.openPopup();
+         mymap.setView([33.2213, -96.6609], 16);
+       }).addTo(mymap);
+       minh_button.button.style.padding = '0px';
       </script>
 
     </div>
