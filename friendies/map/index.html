@@ -26,9 +26,6 @@
         height: 100vh;
         background-color: grey;
       }
-      .star{
-        font-size: 1.5em;
-      }
     </style>
   </head>
 
@@ -77,14 +74,10 @@
        horn.bindPopup("<b>Horn</b><br>2nd Floor: Blue, Manny, Roxanne");
 
        var hannah = L.marker([34.2272, -118.2435]).addTo(mymap);
-       //hannah.bindPopup("<b>Hannah</b><br>1st Floor: Hannah");
+       hannah.bindPopup("<b>Hannah's House</b><br>1st Floor: Hannah");
 
-       var hannah = L.popup()
-          .setLatLng([34.2272, -118.2435])
-          .setContent("<b>Hannah</b><br>1st Floor: Hannah");
-
-       L.easyButton('<span class="star">&starf;</span>', function(btn, map){
-         hannah.openOn(map);
+       L.easyButton('&starf;', function(){
+         hannah.openPopup();
        }).addTo(mymap);
       </script>
 
