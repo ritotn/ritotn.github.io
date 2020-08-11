@@ -26,6 +26,9 @@
         height: 100vh;
         background-color: grey;
       }
+      .btn {
+        font-size: 1.5em;
+      }
     </style>
   </head>
 
@@ -76,12 +79,12 @@
        var hannah = L.marker([34.2272, -118.2435]).addTo(mymap);
        hannah.bindPopup("<b>Hannah's House</b><br>1st Floor: Hannah");
 
-       L.easyButton('<strong>W</strong>', function(){
+       L.easyButton('<span class="btn">Williams</span>', function(){
          west.openPopup();
          mymap.setView([42.71263, -73.20377], 16);
        }).addTo(mymap);
 
-       L.easyButton('<strong>H</strong>', function(){
+       L.easyButton('<span class="btn">Hannah</span>', function(){
          hannah.openPopup();
          mymap.setView([34.2272, -118.2435], 16);
        }).addTo(mymap);
