@@ -23,6 +23,8 @@
   </head>
 
   <body>
+    <div class="container">
+
       <div id="mapid"></div>
 
       <script>
@@ -54,7 +56,15 @@
 
        var thompson = L.marker([42.7173, -73.2034]).addTo(mymap);
        thompson.bindPopup("<b>Thompson</b><br>3rd Floor: Robert");
+
+       var prospect = L.marker([42.7106, -73.202]).addTo(mymap);
+       prospect.bindPopup("<b>Prospect</b><br>1st Floor: Sne");
+
+       var morgan = L.marker([42.7119, -73.2042]).addTo(mymap);
+       morgan.bindPopup("<b>Morgan</b><br>1st Floor: Abu");
       </script>
+
+    </div>
   </body>
 
 </html>
