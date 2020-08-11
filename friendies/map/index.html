@@ -29,7 +29,7 @@
 
       <script>
        // Creating a map object
-       var mymap = L.map('mapid').setView([-73.20377, 42.71263], 16);
+       var mymap = L.map('mapid').setView([42.71263, -73.20377], 16);
 
        // Creating a Layer object
        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -42,10 +42,10 @@
        }).addTo(mymap);;
 
        // Creating markers that pops up
-       var carter = L.marker([-73.2083, 42.7145]).addTo(mymap);
+       var carter = L.marker([42.7145, -73.2083]).addTo(mymap);
        carter.bindPopup("<b>Carter</b><br>Avery, Crusty, Ruth, Vonnie, Weiwei; Chloe, Destiny, Max, Raph").openPopup();
 
-       var west = L.marker([-73.2052, 42.7124]).addTo(mymap);
+       var west = L.marker([42.7124, -73.2052]).addTo(mymap);
        west.bindPopup("<b>West</b><br>Angela, Atlas, Caitlin, Daniel, Scarlet, Rito").openPopup();
 
       </script>
