@@ -29,6 +29,13 @@
       .btn {
         font-size: 1.5em;
       }
+      function _fixEasyButtonSize(button) {
+        var buttonElement = button.button;
+        buttonElement.style.width = "auto";
+        buttonElement.style.height = "auto";
+        buttonElement.style.minWidth = "26px";
+        buttonElement.style.minHeight = "26px";
+      }
     </style>
   </head>
 
@@ -79,15 +86,19 @@
        var hannah = L.marker([34.2272, -118.2435]).addTo(mymap);
        hannah.bindPopup("<b>Hannah's House</b><br>1st Floor: Hannah");
 
-       L.easyButton('<span class="btn">&#87;</span>', function(){
+       west_button = L.easyButton('<span class="btn">&#87;</span>', function(){
          west.openPopup();
          mymap.setView([42.71263, -73.20377], 16);
-       }).addTo(mymap);
+       });
+       _fixEasyButtonSize(west_button);
+       west_button.addTo(mymap);
 
-       L.easyButton('<span class="btn">&#72;</span>', function(){
+       hannah_button = L.easyButton('<span class="btn">&#72;</span>', function(){
          hannah.openPopup();
          mymap.setView([34.2272, -118.2435], 16);
-       }).addTo(mymap);
+       });
+       _fixEasyButtonSize(hannah_button);
+       hannah_button.addTo(mymap);
       </script>
 
     </div>
