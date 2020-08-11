@@ -76,8 +76,9 @@
        var hannah = L.marker([34.2272, -118.2435]).addTo(mymap);
        hannah.bindPopup("<b>Hannah's House</b><br>1st Floor: Hannah");
 
-       L.easyButton('&starf;', function(){
+       L.easyButton('H', function(){
          hannah.openPopup();
+         mymap.setView([34.2272, -118.2435], 16);
        }).addTo(mymap);
       </script>
 
