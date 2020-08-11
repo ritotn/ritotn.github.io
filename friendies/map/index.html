@@ -16,15 +16,13 @@
     <style>
       #mapid {
         width: 100%;
-        height: 500px;
+        height: 100%;
         background-color: grey;
       }
     </style>
   </head>
 
   <body>
-    <div class="container">
-
       <div id="mapid"></div>
 
       <script>
@@ -43,14 +41,20 @@
 
        // Creating markers that pops up
        var carter = L.marker([42.7145, -73.2083]).addTo(mymap);
-       carter.bindPopup("<b>Carter</b><br>Avery, Crusty, Ruth, Vonnie, Weiwei; Chloe, Destiny, Max, Raph").openPopup();
+       carter.bindPopup("<b>Carter</b><br>2nd Floor: Chloe, Destiny, Max, Raph<br>4th Floor: Avery, Crusty, Ruth, Vonnie, Weiwei");
 
        var west = L.marker([42.7124, -73.2052]).addTo(mymap);
-       west.bindPopup("<b>West</b><br>Angela, Atlas, Caitlin, Daniel, Scarlet, Rito").openPopup();
+       west.bindPopup("<b>West</b><br>4th Floor: Angela, Atlas, Caitlin, Daniel, Scarlet, Rito").openPopup();
 
+       var currier = L.marker([42.7112, -73.2012]).addTo(mymap);
+       currier.bindPopup("<b>Currier</b><br>2nd Floor: Yunjin");
+
+       var east = L.marker([42.7114, -73.2021]).addTo(mymap);
+       east.bindPopup("<b>East</b><br>3rd Floor: Emily");
+
+       var thompson = L.marker([42.7173, -73.2034]).addTo(mymap);
+       thompson.bindPopup("<b>Thompson</b><br>3rd Floor: Robert");
       </script>
-
-
   </body>
 
 </html>
