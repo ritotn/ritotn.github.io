@@ -14,6 +14,10 @@
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
       crossorigin=""></script>
     <style>
+      body {
+        background-color: #4158D0;
+        background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+      }
       #mapid {
         height: 100vh;
         background-color: grey;
@@ -42,7 +46,7 @@
 
        // Creating markers that pops up
        var carter = L.marker([42.7145, -73.2083]).addTo(mymap);
-       carter.bindPopup("<b>Carter</b><br>2nd Floor: Chloe, Destiny, Max, Raph<br>4th Floor: Avery, Crusty, Ruth, Vonnie, Weiwei");
+       carter.bindPopup("<b>Carter</b><br>2nd Floor: Chloe, Destiny, Max, Raph<br>4th Floor: Avery, Crusty, Ruth, Vonnie, Weiwei; Lemmy");
 
        var west = L.marker([42.7124, -73.2052]).addTo(mymap);
        west.bindPopup("<b>West</b><br>4th Floor: Angela, Atlas, Caitlin, Daniel, Scarlet, Rito").openPopup();
