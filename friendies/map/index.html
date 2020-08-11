@@ -7,32 +7,39 @@
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/skeleton.css">
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
   </head>
 
   <body>
     <div class="container">
 
-      <div class="row">
-        <p></p>
-      </div>
-      
-      <div class="row">
-        <img alt="map" src="friendies_map.png" style="width:100%;height:"auto" usemap="#friendiesinfo"></img>
-        <map name="friendiesinfo">
-          <area alt="Carter" title="Carter" href="#" coords="133,121,48" shape="circle" onclick="clickmap('Carter 2: Chloe, Destiny, Max, Raph; Carter 4: Avery, Crusty, Ruth, Weiwei, Vonnie')">
-          <area alt="West" title="West" href="#" coords="712,673,47" shape="circle" onclick="clickmap('West 4: Angela, Atlas, Caitlin, Daniel, Rito')">
-          <area alt="Currier" title="Currier" href="#" coords="1454,973,50" shape="circle" onclick="clickmap('Currier 2: Yunjin')">
-        </map>
+      <div id="map">
+
       </div>
 
-    </div>
-    
-    <script>
-      function clickmap(info) {
-        alert(info)
-      }
-    </script>
-                                                                              
+      <script>
+        // Initialize and add the map
+        function initMap() {
+        // The location of Uluru
+        var uluru = {lat: -25.344, lng: 131.036};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+          document.getElementById('map'), {zoom: 4, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+      </script>
+      <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiwoYUsIQ0fiMBfNjiAy363J6Gb1DRg2Q&callback=initMap">
+      </script>
+
+
   </body>
 
 </html>
