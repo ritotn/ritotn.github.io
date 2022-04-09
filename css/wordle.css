@@ -1,0 +1,52 @@
+body {
+  margin: 0 auto;
+  padding: 10%;
+}
+h1 {
+  font-size: 6vh;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: #618B55;
+  text-align: center;
+}
+h2 {
+  font-size: 4vh;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: #121213;
+  text-align: center;
+}
+table{
+  width: 100%;
+}
+
+.guess {
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  max-width: 4ch;
+}
+.left_td {
+  width: 40%;
+  text-align: right;
+}
+.right_td {
+  width: 60%;
+}
+.share_button {
+  text-align: center;
+  display: none;
+  margin-top: 20px;
+}
+button {
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  font-size: 16px;
+  background-color: #618B55;
+  color: #FFFFFF;
+  padding: 10px 36px;
+  border-radius: 12px;
+  border: solid #618B55;
+  transition-duration: 0.4s;
+}
+button:hover {
+  background-color: #FFFFFF;
+  color: #618B55;
+  border: solid #618B55;
+  cursor: pointer;
+}
