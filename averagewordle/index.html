@@ -24,7 +24,7 @@
 
       function onKeyPress(event, id, value) {
         index = id.slice(-1)
-        if (event.keyCode == 13 | event.keyCode == 40) { // "Enter" or "Down"
+        if (event.keyCode == 13 | event.keyCode == 40 | event.keyCode == 9) { // "Enter" or "Down" or "Tab"
           calculate()
           if (value > 15) {
             document.getElementById(index).innerHTML = "⬜️".repeat(15) + "➡️"
