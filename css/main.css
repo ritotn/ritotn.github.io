@@ -1,44 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color:#262626;
+  background-color: #fbeff1;
+}
 body {
-    margin: 60px auto;
-    width: 70%;
-}
-nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 0px;
-    list-style: none;
-    font-weight: bold;
-}
-nav ul li, footer ul li {
-    display: inline;
-    margin-right: 20px;
-}
-a {
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 40px 0px;
 }
 h1 {
-    font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    color: #262626;
+    font-size: 2em;
+    margin-bottom: 50px;
+    font-weight: 400;
 }
-p {
-    font-size: 1.5em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    line-height: 1.4em;
-    color: #333;
+a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #0000EE;
 }
-footer {
-    border-top: 1px solid #d5d5d5;
-    font-size: .8em;
+a:hover {
+  text-decoration: underline;
 }
-
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
+.emoji {
+  animation-name: wave-animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
 }
-
-ul.posts li {
-    list-style: none;
+.section {
+  margin-bottom: 30px;
+}
+.role {
+  font-size: 1.5em; 
+}
+.subtitle {
+  margin-bottom: 5px;
+  color: #696969;
+  font-size: 1em;
+}
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(12deg);
+  }
+  30% {
+    transform: rotate(-6deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  60% {
+    transform: rotate(8deg);
+  }
+  70% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
