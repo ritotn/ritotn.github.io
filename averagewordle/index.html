@@ -35,7 +35,7 @@
 
       function onKeyDown(event, id) {
         index = id.slice(-1)
-        if (event.keyCode == 13 | event.keyCode == 40 | event.keyCode == 9) { // "Enter" or "Down" or "Tab"
+        if (event.keyCode == 13 | event.keyCode == 40) { // "Enter" or "Down"
           if (index < 5) {
             next_id = "guess"+ String(Number(index) + 1)
             document.getElementById(next_id).focus()
