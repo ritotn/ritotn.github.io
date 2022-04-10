@@ -22,34 +22,36 @@
         }
       }
 
-      function onKeyPress(event, id, value) {
+      function onFocusOut(id, value) {
+        calculate()
+
+        index = id.slice(-1)
+        if (value > 15) {
+          document.getElementById(index).innerHTML = "⬜️".repeat(15) + "➡️"
+        } else {
+          document.getElementById(index).innerHTML = "⬜️".repeat(value)
+        }
+      }
+
+      function onKeyDown(event, id) {
         index = id.slice(-1)
         if (event.keyCode == 13 | event.keyCode == 40 | event.keyCode == 9) { // "Enter" or "Down" or "Tab"
-          calculate()
-          if (value > 15) {
-            document.getElementById(index).innerHTML = "⬜️".repeat(15) + "➡️"
-          } else {
-            document.getElementById(index).innerHTML = "⬜️".repeat(value)
+          if (index < 5) {
+            next_id = "guess"+ String(Number(index) + 1)
+            document.getElementById(next_id).focus()
           }
-          next_id = "guess"+ String(Number(index) + 1)
-          document.getElementById(next_id).focus()
-        } else if (event.keyCode == 38) {// "Up"
-          calculate()
-          if (value > 15) {
-            document.getElementById(index).innerHTML = "⬜️".repeat(15) + "➡️"
-          } else {
-            document.getElementById(index).innerHTML = "⬜️".repeat(value)
+        } else if (event.keyCode == 38) { // "Up"
+          if (index > 0) {
+            prev_id = "guess"+ String(Number(index) - 1)
+            document.getElementById(prev_id).focus()
           }
-          prev_id = "guess"+ String(Number(index) - 1)
-          document.getElementById(prev_id).focus()
         }
       }
 
       function share() {
-        let share = document.getElementById("average_score")
-        console.log(share)
+        let score = document.getElementById("average_score")
 
-        digits = share.textContent.split("")
+        digits = score.textContent.split("")
         let map = new Map([
           ["0", "0️⃣"],
           ["1", "1️⃣"],
@@ -64,8 +66,6 @@
           [".", "∙"]
         ])
         digits = digits.map(i => map.get(i))
-        console.log(map)
-        console.log(digits)
 
         message = "My average Wordle score is:\n" + digits.join("") + "\nhttps://ritotn.github.io/averagewordle"
 
@@ -80,41 +80,55 @@
 
     <h2>Average Wordle Score</h2>
     <h1 id="average_score"><wbr></h1>
+    <h3>Enter your <a href="https://www.nytimes.com/games/wordle/index.html">Guess Distribution:</a></h3>
 
     <table>
       <tr>
-        <td class="left_td"><input type="text" class="guess" placeholder="1" id="guess0" maxlength=3 onkeydown="onKeyPress(event, id, value)"/></td>
+        <td class="left_td">
+          <input type="text" class="guess" placeholder="1" id="guess0" maxlength=3 onfocusout="onFocusOut(id, value)" onkeydown="onKeyDown(event, id)"/>
+        </td>
         <td class="right_td" id="0"></td>
       </tr>
 
       <tr>
-        <td class="left_td"><input type="text" class="guess" placeholder="2" id="guess1" maxlength=3 onkeydown="onKeyPress(event, id, value)"/></td>
+        <td class="left_td">
+          <input type="text" class="guess" placeholder="2" id="guess1" maxlength=3 onfocusout="onFocusOut(id, value)" onkeydown="onKeyDown(event, id)"/>
+        </td>
         <td class="right_td" id="1"></td>
       </tr>
 
       <tr>
-        <td class="left_td"><input type="text" class="guess" placeholder="3" id="guess2" maxlength=3 onkeydown="onKeyPress(event, id, value)"/></td>
+        <td class="left_td">
+          <input type="text" class="guess" placeholder="3" id="guess2" maxlength=3 onfocusout="onFocusOut(id, value)" onkeydown="onKeyDown(event, id)"/>
+        </td>
         <td class="right_td" id="2"></td>
       </tr>
 
       <tr>
-        <td class="left_td"><input type="text" class="guess" placeholder="4" id="guess3" maxlength=3 onkeydown="onKeyPress(event, id, value)"/></td>
+        <td class="left_td">
+          <input type="text" class="guess" placeholder="4" id="guess3" maxlength=3 onfocusout="onFocusOut(id, value)" onkeydown="onKeyDown(event, id)"/>
+        </td>
         <td class="right_td" id="3"></td>
       </tr>
 
       <tr>
-        <td class="left_td"><input type="text" class="guess" placeholder="5" id="guess4" maxlength=3 onkeydown="onKeyPress(event, id, value)"/></td>
+        <td class="left_td">
+          <input type="text" class="guess" placeholder="5" id="guess4" maxlength=3 onfocusout="onFocusOut(id, value)" onkeydown="onKeyDown(event, id)"/>
+        </td>
         <td class="right_td" id="4"></td>
       </tr>
 
       <tr>
-        <td class="left_td"><input type="text" class="guess" placeholder="6" id="guess5" maxlength=3 onkeydown="onKeyPress(event, id, value)"/></td>
+        <td class="left_td">
+          <input type="text" class="guess" placeholder="6" id="guess5" maxlength=3 onfocusout="onFocusOut(id, value)" onkeydown="onKeyDown(event, id)"/>
+        </td>
         <td class="right_td" id="5"></td>
       </tr>
     </table>
 
     <div id="share_button" class="share_button">
       <button type="button" onclick="share()">Share 🔗</button>
+      <h3>Made by <a href="https://ritotn.github.io/">Rito</a></h3>
     </div>
 
   </body>
