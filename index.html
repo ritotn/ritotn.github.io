@@ -14,11 +14,11 @@
 </style>
 
 <pre>
-<span class="server">HTTP/2 200 OK
+<span class="server">
 date:
-server: GitHub.com
-content-type: text/html; charset=utf-8
-content-length:</span>
+server:
+content-length:
+x-served-by:</span>
 <b>x-name:</b> rito tanaka
 <b>x-role:</b> software engineer @ microsoft
 <b>x-location:</b> new york city
@@ -30,7 +30,7 @@ content-length:</span>
   // Fill in the real response headers GitHub Pages sends for this page.
   const nav = performance.getEntriesByType("navigation")[0];
   const version = { h2: "HTTP/2", h3: "HTTP/3" }[nav.nextHopProtocol] || "HTTP/1.1";
-  const shown = ["date", "server", "content-type", "content-length"];
+  const shown = ["date", "server", "content-length", "x-served-by"];
 
   fetch(location, { method: "HEAD", cache: "no-store" }).then(res => {
     // content-length: uncompressed size of this file (GitHub's is gzipped)
