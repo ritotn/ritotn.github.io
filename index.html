@@ -2,8 +2,9 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Rito Tanaka, software engineer.">
+<meta name="description" content="Rito Tanaka's personal website.">
 <title>Rito Tanaka</title>
+
 <style>
   :root { color-scheme: dark; }
   body { margin: 2rem; max-width: 80ch; font: 14px/1.6 ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
@@ -11,11 +12,15 @@
   b, .server { font-weight: normal; opacity: .5; }
   .pouches { color: #ff7a50; } /* pouches' dark-mode accent */
 </style>
-<pre id="response"><b>x-name:</b> rito tanaka
+
+<pre>
+<b>x-name:</b> rito tanaka
 <b>x-role:</b> software engineer @ microsoft
 <b>x-location:</b> new york city
 <b>x-building:</b> <a class="pouches" href="/pouches">pouches</a>, a packing list app for ios
-<b>link:</b> &lt;<a href="https://www.linkedin.com/in/ritotanaka" rel="me">https://www.linkedin.com/in/ritotanaka</a>&gt;; rel="me"</pre>
+<b>link:</b> &lt;<a href="https://www.linkedin.com/in/ritotanaka" rel="me">https://www.linkedin.com/in/ritotanaka</a>&gt;; rel="me"
+</pre>
+
 <script>
   // Prepend the real response headers GitHub Pages sends for this page.
   const nav = performance.getEntriesByType("navigation")[0];
@@ -26,9 +31,8 @@
     // content-length: uncompressed size of this file (GitHub's is gzipped)
     const value = name => name === "content-length" ? nav.decodedBodySize : res.headers.get(name);
     const lines = shown.filter(value).map(name => `${name}: ${value(name)}`);
-    const response = document.getElementById("response");
+    const response = document.querySelector("pre");
     const status = `${version} ${res.status} ${res.statusText || "OK"}`;
     response.insertAdjacentHTML("afterbegin", `<span class="server">${[status, ...lines].join("\n")}</span>\n`);
   }).catch(() => {});
 </script>
-</html>
