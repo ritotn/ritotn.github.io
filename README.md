@@ -1,4 +1,3 @@
-# [ritotn.github.io](https://ritotn.github.io)
-Personal website
+# ritotn.github.io
 
-A static personal website designed by myself using HTML.
+One HTML file. It shows the HTTP response that served it.
